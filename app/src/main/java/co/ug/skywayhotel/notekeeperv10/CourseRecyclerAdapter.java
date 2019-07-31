@@ -14,16 +14,15 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
-
 public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAdapter.ViewHolder> {
 
     private final Context mContext;
-    private List<CourseInfo> mCourses = null;
+    private List<CourseInfo> mCourses;
     private final LayoutInflater mLayoutInflater;
 
     public CourseRecyclerAdapter(Context context, List<CourseInfo> courses) {
         mContext = context;
-        this.mCourses = mCourses;
+        this.mCourses = courses;
         mLayoutInflater = LayoutInflater.from(mContext);
     }
 
@@ -52,7 +51,7 @@ public class CourseRecyclerAdapter extends RecyclerView.Adapter<CourseRecyclerAd
 
         public ViewHolder(View itemView) {
             super(itemView);
-            mTextCourse = (TextView) itemView.findViewById(R.id.text_course);
+            mTextCourse = itemView.findViewById(R.id.text_course);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

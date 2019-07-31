@@ -51,8 +51,8 @@ public class NoteRecyclerAdapter extends RecyclerView.Adapter<NoteRecyclerAdapte
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            mTextCourse = (TextView) itemView.findViewById(R.id.text_course);
-            mTextTitle = (TextView) itemView.findViewById(R.id.text_title);
+            mTextCourse = itemView.findViewById(R.id.text_course);
+            mTextTitle = itemView.findViewById(R.id.text_title);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -38,7 +38,7 @@ public class NoteActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mSpinnerCourses = (Spinner) findViewById(R.id.spinner_courses);
+        mSpinnerCourses = findViewById(R.id.spinner_courses);
 
         List<CourseInfo> courses = DataManager.getInstance().getCourses();
         ArrayAdapter<CourseInfo> adapterCourses =
@@ -54,8 +54,8 @@ public class NoteActivity extends AppCompatActivity {
             restoreOriginalNoteValues(savedInstanceState);
         }
 
-        mTextNoteTiltle = (EditText) findViewById(R.id.text_note_title);
-        mTextNoteText = (EditText) findViewById(R.id.text_note_text);
+        mTextNoteTiltle = findViewById(R.id.text_note_title);
+        mTextNoteText = findViewById(R.id.text_note_text);
 
         if(!mIsNewNote)
             displayNote(mSpinnerCourses, mTextNoteTiltle, mTextNoteText);
@@ -96,7 +96,7 @@ public class NoteActivity extends AppCompatActivity {
             createNote();
         }else{
             mNote = DataManager.getInstance().getNotes().get(position);
-;    }
+        }
     }
 
 
